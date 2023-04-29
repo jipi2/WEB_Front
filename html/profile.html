@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/search_bar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="../css/profile.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/profile.js"></script>
+    <title>Profile</title>
+</head>
+
+<header>
+    <div class="logo">Jipi's Movies</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar" >
+            <ul>
+                <li>
+                    <a href="home.html" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="#watch_list">Watch List</a>
+                </li>
+                <li>
+                    <a href="index.html">Sign out</a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <div class="container_search">
+                        <div class="search_box">
+                                <form>
+                                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                      <input  type="text" placeholder="Search Movies">
+                              </form>
+                        </div>	                      
+                </div>
+                </li>
+            </ul>
+        </nav>
+</header>
+<body>
+    <!-- <div class="container_user">
+        <img src="../assets/images/user_picture.jpg" alt="">
+        <div class="info">
+            <p>Username: </p>
+        </div>
+    </div> -->
+    <h2 style="text-align:center">User Profile Card</h2>
+
+<div class="card">
+    <img src="../assets/images/user_picture.jpg" alt="John" style="width:100%">
+    <h1 id="username">Username</h1>
+    <p class="title" id="emailUser">Email</p>
+    <div style="margin: 24px 0;">
+        <p id="numberOfPoints">Number of Points</p>
+    </div>
+</div>
+
+
+<div class="rubric_movie">
+    <a href="edit_credentials.html">
+        <button class="button-19">Edit Profile</button>
+    </a>
+    <h1 class="" id="watch_list">Watch List</h1>
+</div>
+
+<div class="movies-grid" id="movieGrid">
+
+   
+ 
+</div>
+
+</body>
+</html>

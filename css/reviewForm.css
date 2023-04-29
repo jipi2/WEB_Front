@@ -1,0 +1,266 @@
+:root {
+
+    --background: hsla(220, 17%, 7%, 1);
+    --banner-background: hsla(250, 6%, 20%, 1);
+    --on-background: hsla(220, 100%, 95%, 1);
+    --primary: hsla(349, 100%, 43%, 1);
+    --primary-variant: hsla(349, 69%, 51%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+  
+    /* gradient colors */
+  
+    --ff-dm-sans: 'DM Sans', sans-serif;
+  
+    --fs-heading: 4rem;
+    --fs-title: 2rem;
+    --fs-body: 1.8rem;
+    --fs-button: 1.5rem;
+  
+    --weight-bold: 700;
+  
+    --radius-8: 8px;
+  
+  
+    --transition-short: 250ms ease;
+    --transition-long: 500ms ease;
+  
+}
+  
+  
+
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+img { height: auto; }
+
+
+button {
+text-align: left;
+cursor: pointer;
+}
+
+html {
+font-family: var(--ff-dm-sans);
+font-size: 10px;
+scroll-behavior: smooth;
+}
+
+body {
+background-color: var(--background);
+color: var(--on-background);
+font-size: var(--fs-body);
+line-height: 1.5;
+}
+
+:focus-visible { outline-color: var(--primary-variant); }
+
+::-webkit-scrollbar {
+width: 8px;
+height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: var(--banner-background);
+border-radius: var(--radius-8);
+}
+  
+  
+  
+  /* --------------------------------------------------------------------------------------------------------*/
+  
+
+@keyframes loading {
+0% { transform: rotate(0); }
+100% { transform: rotate(1turn); }
+}
+
+/*---------------------------------------------------------------------------*/
+
+
+.mini-body
+{
+    position: relative;
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    top: 20rem;
+
+}
+
+.container-box
+{
+    position: relative;
+    width: 400px;
+    background-color: #111;
+    padding: 20px 30px; 
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.container-box .text
+{
+    font-size: 25px;
+    color: #666;
+    font-weight: 500;
+}
+
+.container-box .post
+{
+    display: none;
+}
+
+.container-box .edit
+{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.container-box .star-widget input
+{
+    display: none;
+}
+
+.star-widget label
+{
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
+    float: right;
+    transition: all 0.2 ease;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label
+{
+    color: #fd4;
+}
+
+input:checked ~ label{
+    color: #fd4;
+}
+
+input#rate-5:checked ~label
+{
+    color: #fd4;
+    text-shadow: 0 0 20px #952;
+}
+
+/* #rate-1:checked ~ form p:before
+{
+    content: "I just hate it 😡";
+}
+
+#rate-2:checked ~ form p:before
+{
+    content: "I don't like it 😐";
+}
+#rate-3:checked ~ form p:before
+{
+    content: "I like it 😃";
+}
+#rate-4:checked ~ form p:before
+{
+    content: "It is awesome 😎";
+}
+#rate-5:checked ~ form p:before
+{
+    content: "I love it 😍";
+} */
+
+.container-box form
+{
+    display: none;
+}
+
+.container-box .edit:hover
+{
+    text-decoration: underline;
+}
+
+input:checked ~ form
+{
+    display: block;
+}
+
+form p
+{
+    width: 100%;
+    font-size: 25px;
+    color: #fe7;
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+
+form .textarea
+{
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+form .textarea textarea
+{
+    height: 100%;
+    width: 100%;
+    color: #eee;
+    outline: none;
+    border: 1px solid #333;
+    background: #222;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+
+form .btn
+{
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+form .btn button
+{
+    height: 100%;
+    width: 100%;
+    border: 1px solid #444;
+    outline:none;
+    background: #222;
+    color: #999;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form .btn button:hover
+{
+    background: #1b1b1b;
+}

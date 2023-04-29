@@ -1,0 +1,8 @@
+    // const username = document.getElementById('username').value;
+    // const pass = document.getElementById('password').value;
+    
+    // if (username === 'admin' && pass=='admin') {
+    //     window.location.href = 'admin_home.html';
+    // } else {
+    //     window.location.href = 'home.html';
+    // }

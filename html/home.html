@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+    <title>Jipi's Movies</title>
+    <meta name="title" content="Jipi's Movies">
+    <meta name="description" content="Jipi's Movies is a popular movie app made by jipi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/search_bar.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/home.js"></script>
+</head>
+<header>
+    <div class="logo">Jipi's Movies</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar" >
+            <ul>
+                <li>
+                    <a href="" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="profile.html#watch_list">Watch List</a>
+                </li>
+                <li>
+                    <a href="index.html">Sign out</a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <div class="container_search">
+                        <div class="search_box">
+                                <form>
+                                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                      <input  type="text" placeholder="Search Movies">
+                              </form>
+                        </div>	                      
+                </div>
+                </li>
+            </ul>
+        </nav>
+</header>
+
+<body>
+    <nav class="sidebar active" sidebar>
+        <div class="sidebar-inner">
+            <div class="sidebar-list">
+                <p class="title">Genre</p>
+                <a href="#action_section" menu-close class="sidebar-link">Action</a>
+                <a href="#horror_section" menu-close class="sidebar-link">Horror</a>
+                <a href="#comedy_section" menu-close class="sidebar-link">Comedy</a>
+                <a href="#drama_section" menu-close class="sidebar-link">Drama</a>
+                <a href="#sf_section" menu-close class="sidebar-link">Sci-Fi</a>
+            
+            </div>
+        </div>
+    
+    </nav>
+    
+    <section class="container" page-content>
+
+        <div class="genre_title">
+            <h1 class="action_title" id="action_section">Action</h1>
+        </div>
+
+        <div class="movies-grid" id="actionGrid">
+
+          
+        </div>
+
+        <div class="genre_title">
+            <h1 class="horror_title" id="horror_section">Horror</h1>
+        </div>
+    
+        <div class="movies-grid" id="horrorGrid">
+  
+            
+        </div>
+
+
+        <div class="genre_title">
+            <h1 class="comedy_title" id="comedy_section">Comedy</h1>
+        </div>
+    
+        <div class="movies-grid" id="comedyGrid">
+       
+        </div>
+
+        <div class="genre_title">
+            <h1 class="drama_title" id="drama_section">Drama</h1>
+        </div>
+    
+        <div class="movies-grid" id="dramaGrid">
+
+            
+        </div>
+
+
+        <div class="genre_title">
+            <h1 class="sf_title" id="sf_section">Sci-Fi</h1>
+        </div>
+    
+        <div class="movies-grid" id="sfGrid">
+
+            
+        </div>
+
+
+    </section>
+  
+
+</body>
+</html>

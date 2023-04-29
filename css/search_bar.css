@@ -1,0 +1,27 @@
+.search_box{
+    border-radius: 40px;
+    background-color: white;
+}
+.search_box form{
+    margin: 0;
+}
+.search_box input{
+    border:none;
+    margin:10px 10px 15px 5px;
+    font-size: 20px;
+    outline: none;
+    color:#17202A;
+    width: auto;
+}
+.search_box button i{
+    font-size: 20px;
+    margin: 0px 10px;
+    color:black;
+}
+
+.search_box button{
+    background: transparent;
+    border:none;
+    outline: none;
+    display: contents;
+}

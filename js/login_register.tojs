@@ -1,0 +1,36 @@
+document.addEventListener("DOMContentLoaded", function()
+{
+
+    const signinBtn = document.querySelector('.signInBtn');
+    const signupBtn = document.querySelector('.signUpBtn');
+    const formBx = document.querySelector('.formBx');
+    const bodyPage = document.querySelector('.body_page')
+
+    signupBtn.onclick = function()
+    {
+        formBx.classList.add('active');
+        bodyPage.classList.add('active');
+    }
+
+    signinBtn.onclick = function()
+    {
+        formBx.classList.remove('active');
+        bodyPage.classList.remove('active');
+
+    }
+
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+    
+    if (username === 'admin' && pass=='admin') {
+        window.location.href = 'admin_home.html';
+    } else {
+        window.location.href = 'home.html';
+    }
+    });
+});

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/admin_movie.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/admin_movie.js"></script>
+    <title>Admin Movie</title>
+</head>
+<header>
+    <div class="logo">Admin</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar" >
+            <ul>
+                <li>
+                    <a href="admin_home.html">Home</a>
+                </li>
+                <li>
+                    <a href="admin_useri.html">Users</a>
+                </li>
+                <li>
+                    <a href="admin_reviews.html">Reviews</a>
+                </li>
+                <li>
+                    <a href="admin_movie.html">Add Movie</a>
+                </li>
+                <li>
+                    <a href="index.html">Sign out</a>
+                </li>
+            </ul>
+        </nav>
+</header>
+<body>
+
+    <div class="mini-body">
+        <h2>
+            Add a movie to be reviewed
+        </h2>
+        <form action="#">
+            <div class="title-cotainer">
+                <textarea cols="30" placeholder="Name of the movie"></textarea>
+            </div>
+            <div class="actors-container">
+                <textarea cols="30" placeholder="Name of the actors"></textarea>
+            </div>
+            <div class="description-container">
+                <textarea cols="30" placeholder="Description"></textarea>
+            </div>
+            <div class="raiting-container">
+                <textarea cols="30" id="raitingBox" placeholder="Raiting"></textarea>
+            </div>
+            <div class="link-container">
+                <textarea cols="30"  placeholder="link for trailer"></textarea>
+            </div>
+            <div class="path-container">
+                <textarea cols="30"  placeholder="path for cover image"></textarea>
+            </div>
+            <div>
+                <button class="button-19">Save</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

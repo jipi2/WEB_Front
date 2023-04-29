@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/login_register.css">
+    <script src="../js/navbar.js"></script>
+    <script src="../js/login_register.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+</head>
+    <header>
+        <div class="logo">Jipi's Movies</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="index.html">Sign out</a>
+                </li>
+            </ul>
+        </nav>
+    
+    </header>
+
+<div class="body_page">
+    <body>
+
+        <div class="container_log">
+            <div class="blackBg">
+                <div class="box signin">
+                    <h2>Already Have an Account?</h2>
+                    <button class="signInBtn" >Sign in</button>
+                </div>
+                <div class="box signup">
+                    <h2>Don't Have an Account?</h2>
+                    <button class="signUpBtn" >Sign up</button>
+                </div>
+            </div>
+            <div class="formBx">
+                <div class="form signinForm">
+                    <form id="loginForm">
+                        <h3>Sign in</h3>
+                        <input type="text" placeholder="Username" id="username">
+                        <input type="password" placeholder="Password" id="password">
+                        <div class="keep-logged">
+                            <div class="input-check">
+                                <input type="checkbox">
+                            </div>
+                            
+                            <div class="label-check">
+                                <label>Keep Me Logged In</label>
+                            </div>
+                        </div>
+                        <input type="submit" id="logBtn" value="Login">
+                        <a href="#" class="forgot">Forgot Password</a>
+                    </form>
+                </div>
+
+                <div class="form signupForm">
+                    <form action="home.html" id="registerForm">
+                        <h3>Sign up</h3>
+                        <input id="regName" type="text" placeholder="Name" >
+                        <input id="regUsername" type="text" placeholder="Username" >
+                        <input id="regEmail" type="text" placeholder="Email Address">
+                        <input id="regPass" type="password" placeholder="Password">
+                        <input id="regConfirmPass" type="password" placeholder="Confirm Password">
+                        <input type="submit" value="Register">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+</div>
+</body>
+
+</html>

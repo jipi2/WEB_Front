@@ -1,0 +1,251 @@
+:root {
+
+  --background: hsla(220, 17%, 7%, 1);
+  --banner-background: hsla(250, 6%, 20%, 1);
+  --on-background: hsla(220, 100%, 95%, 1);
+  --primary: hsla(349, 100%, 43%, 1);
+  --primary-variant: hsla(349, 69%, 51%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+
+  /* gradient colors */
+
+  --ff-dm-sans: 'DM Sans', sans-serif;
+
+  --fs-heading: 4rem;
+  --fs-title: 2rem;
+  --fs-body: 1.8rem;
+  --fs-button: 1.5rem;
+
+  --weight-bold: 700;
+
+  --radius-8: 8px;
+
+
+  --transition-short: 250ms ease;
+  --transition-long: 500ms ease;
+  
+}
+  
+  
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  li { list-style: none; }
+  
+  a,
+  img,
+  span,
+  iframe,
+  button { display: block; }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img { height: auto; }
+  
+  input,
+  button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+  }
+  
+  input { width: 100%; }
+  
+  button {
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  html {
+    font-family: var(--ff-dm-sans);
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--on-background);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+  }
+  
+  :focus-visible { outline-color: var(--primary-variant); }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--banner-background);
+    border-radius: var(--radius-8);
+  }
+  
+  
+  
+  /* --------------------------------------------------------------------------------------------------------*/
+  
+  /*reused style*/
+  
+  @keyframes loading {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(1turn); }
+  }
+  
+  .heading,
+  .title {
+    font-weight: var(--weight-bold);
+    letter-spacing: 0.5px;
+  }
+  
+  .title { font-size: var(--fs-title); }
+  
+  .heading {
+    color: var(--white);
+    font-size: var(--fs-heading);
+    line-height: 1.2;
+  }
+  
+  .img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .meta-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .btn {
+    color: var(--white);
+    font-size: var(--fs-button);
+    font-weight: var(--weight-bold);
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-block: 12px;
+    padding-inline: 20px 24px;
+    border-radius: var(--radius-8);
+    transition: var(--transition-short);
+}
+    
+/*indicatii*/
+.mini-body
+{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    padding-top: 10rem;
+}
+
+.mini-body h2
+{
+    padding-bottom: 10%;
+}
+
+
+.buttons
+{
+    position: relative;
+    display: flex;
+    gap: 10%;
+    text-align: center;
+    justify-content: center;
+}
+
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 50%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+@media only screen and (max-width: 900px)
+{
+    .buttons
+    {
+        display: block;
+    }
+    .buttons-container
+    {
+        padding-top: 10%;
+    }
+}

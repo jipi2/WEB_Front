@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/search_bar.css">
+    <link rel="stylesheet" href="../css/reviewForm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/navbar.js"></script>
+    <title>Review From</title>
+</head>
+<header>
+    <div class="logo">Jipi's Movies</div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar" >
+            <ul>
+                <li>
+                    <a href="home.html" class="active">Home</a>
+                </li>
+                <li>
+                    <a href="profile.html#watch_list">Watch List</a>
+                </li>
+                <li>
+                    <a href="index.html">Sign out</a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <div class="container_search">
+                        <div class="search_box">
+                                <form>
+                                     <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                      <input  type="text" placeholder="Search Movies">
+                              </form>
+                        </div>	                      
+                </div>
+                </li>
+            </ul>
+        </nav>
+</header>
+<body>
+    
+    <div class="mini-body">
+        <div class="container-box">
+
+            <div class="post">
+                <div class="text">
+                    Thanks for rating the movie!
+                    You review will be posted after the verification.
+                </div>
+                <div class="edit">
+                    EDIT
+                </div>
+            </div>
+            <div class="star-widget">
+                
+                <input type="radio" name="rate" id="rate-5">
+                <label for="rate-5" class="fa fa-star"></label>
+
+                <input type="radio" name="rate" id="rate-4">
+                <label for="rate-4" class="fa fa-star"></label>
+
+                <input type="radio" name="rate" id="rate-3">
+                <label for="rate-3" class="fa fa-star"></label>
+
+                <input type="radio" name="rate" id="rate-2">
+                <label for="rate-2" class="fa fa-star"></label>
+
+                <input type="radio" name="rate" id="rate-1">
+                <label for="rate-1" class="fa fa-star"></label>
+
+                <form action="#">
+                    <p></p>
+                    <div class="textarea">
+                        <textarea  cols="30" placeholder="What is your opinion" ></textarea>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Post</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/reviewForm.tojs"></script>
+    
+</body>
+</html>
