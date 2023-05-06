@@ -65,7 +65,14 @@ document.addEventListener("DOMContentLoaded", function()
             document.cookie = "jwt="+token+"; path=/";
             const jwt=getCookie("jwt");
             console.log(jwt);
-            window.location.href = "home.html"
+            if(username === 'admin' && password === 'admin')
+            {
+                window.location.href="admin_home.html";
+            }
+            else
+                window.location.href = "home.html";
+
+
 
         })
         .catch(error => {

@@ -43,24 +43,30 @@
         <h2>
             Add a movie to be reviewed
         </h2>
-        <form action="#">
+        <form action="submit" id="movieForm">
             <div class="title-cotainer">
-                <textarea cols="30" placeholder="Name of the movie"></textarea>
+                <textarea cols="30" placeholder="Name of the movie" id="title"></textarea>
+            </div>
+            <div class="title-cotainer">
+                <textarea cols="30" placeholder="Genre" id="genre"></textarea>
             </div>
             <div class="actors-container">
-                <textarea cols="30" placeholder="Name of the actors"></textarea>
+                <textarea cols="30" placeholder="Name of the actors" id="actors"></textarea>
             </div>
             <div class="description-container">
-                <textarea cols="30" placeholder="Description"></textarea>
+                <textarea cols="30" placeholder="Description" id="description"></textarea>
             </div>
             <div class="raiting-container">
                 <textarea cols="30" id="raitingBox" placeholder="Raiting"></textarea>
             </div>
+            <div class="raiting-container">
+                <textarea cols="30" id="yearBox" placeholder="year"></textarea>
+            </div>
             <div class="link-container">
-                <textarea cols="30"  placeholder="link for trailer"></textarea>
+                <textarea cols="30"  placeholder="link for trailer" id="link"></textarea>
             </div>
             <div class="path-container">
-                <textarea cols="30"  placeholder="path for cover image"></textarea>
+                <textarea cols="30"  placeholder="path for cover image" id="pathImage"></textarea>
             </div>
             <div>
                 <button class="button-19">Save</button>

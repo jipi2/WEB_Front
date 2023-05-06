@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/reviewForm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../js/navbar.js"></script>
+    <script src="../js/reviewForm.js"></script>
     <title>Review From</title>
 </head>
 <header>
@@ -76,13 +77,13 @@
                 <input type="radio" name="rate" id="rate-1">
                 <label for="rate-1" class="fa fa-star"></label>
 
-                <form action="#">
+                <form action="submit" id="reviewForm">
                     <p></p>
                     <div class="textarea">
-                        <textarea  cols="30" placeholder="What is your opinion" ></textarea>
+                        <textarea  cols="30" placeholder="What is your opinion"  id="textArea"></textarea>
                     </div>
                     <div class="btn">
-                        <button type="submit">Post</button>
+                        <button type="submit" id="postButton">Post</button>
                     </div>
                 </form>
 
@@ -90,8 +91,6 @@
         </div>
 
     </div>
-
-    <script src="../js/reviewForm.tojs"></script>
     
 </body>
 </html>

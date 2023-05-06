@@ -6,6 +6,80 @@ function getCookie(name) {
     }
 }
 
+function loadReviews(reviewJSON)
+{
+  const testimonialData = JSON.parse(reviewJSON);
+  const sectionBody = document.getElementById("testimonials");
+  
+  for (let i = 0; i < testimonialData.length; i++) 
+  {
+    const testimonial = testimonialData[i];
+  
+    const testimonialBox = document.createElement('div');
+    testimonialBox.classList.add('testimonial-box');
+  
+    const boxTop = document.createElement('div');
+    boxTop.classList.add('box-top');
+  
+    const profile = document.createElement('div');
+    profile.classList.add('profile');
+  
+    const profileImg = document.createElement('div');
+    profileImg.classList.add('profile-img');
+  
+    const img = document.createElement('img');
+    img.setAttribute('src', '../assets/images/user_picture.jpg');
+    img.setAttribute('alt', '');
+  
+    profileImg.appendChild(img);
+  
+    const nameUser = document.createElement('div');
+    nameUser.classList.add('name-user');
+  
+    const strong = document.createElement('strong');
+    strong.textContent = testimonial.nameOfUser;
+  
+    const span = document.createElement('span');
+    span.textContent = testimonial.usernameOfUser;
+  
+    nameUser.appendChild(strong);
+    nameUser.appendChild(span);
+  
+    profile.appendChild(profileImg);
+    profile.appendChild(nameUser);
+  
+    const reviews = document.createElement('div');
+    reviews.classList.add('reviews');
+  
+    for (let j = 0; j < 5; j++) 
+    {
+      const star = document.createElement('i');
+      star.classList.add('fa', 'fa-star');
+      if (j >= testimonial.numberOfStars) {
+        star.classList.add('fa-star-o');
+      }
+      reviews.appendChild(star);
+    }
+  
+    const viewerComment = document.createElement('div');
+    viewerComment.classList.add('viewer-comment');
+  
+    const commentText = document.createElement('p');
+    commentText.textContent = testimonial.content;
+  
+    viewerComment.appendChild(commentText);
+  
+    boxTop.appendChild(profile);
+    boxTop.appendChild(reviews);
+  
+    testimonialBox.appendChild(boxTop);
+    testimonialBox.appendChild(viewerComment);
+  
+    sectionBody.appendChild(testimonialBox);
+  }
+  
+}
+
 function loadMovieInfo(movieJson)
 {
     const movieInfo = JSON.parse(movieJson);
@@ -40,6 +114,19 @@ document.addEventListener("DOMContentLoaded", function()
       .then(result =>{
         
         loadMovieInfo(result);
+
+      })
+      .catch(error => console.log('error', error));
+
+      const urlReviews = "http://localhost:2222/api/review/getMovieReview/"+movieId;
+
+      fetch(urlReviews, requestOptions)
+      .then(response => response.text())
+
+      .then(result =>{
+        
+        loadReviews(result);
+        //console.log(JSON.parse(result));
 
       })
       .catch(error => console.log('error', error));
