@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function()
             console.log(jwt);
             if(username === 'admin' && password === 'admin')
             {
-                window.location.href="admin_home.html";
+                window.location.href="admin_useri.html";
             }
             else
                 window.location.href = "home.html";

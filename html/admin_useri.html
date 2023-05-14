@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <script src="../js/navbar.js"></script>
+    <script src="../js/admin_users.js"></script>
 
     <title>Users</title>
 </head>
@@ -21,9 +22,9 @@
         </div>
         <nav class="nav-bar" >
             <ul>
-                <li>
+                <!-- <li>
                     <a href="admin_home.html">Home</a>
-                </li>
+                </li> -->
                 <li>
                     <a href="admin_useri.html">Users</a>
                 </li>
@@ -34,7 +35,7 @@
                     <a href="admin_movie.html">Add Movie</a>
                 </li>
                 <li>
-                    <a href="admin_movie.html">Sign out</a>
+                    <a href="index.html">Sign out</a>
                 </li>
             </ul>
         </nav>
@@ -45,15 +46,14 @@
         <div class="table">
             <div class="table-header">
                 <p>User Details</p>
-                <div>
+                <!-- <div>
                     <button class="add-new">Add new User</button>
-                </div>
+                </div> -->
             </div>
             <div class="table-section">
-                <table>
+                <table id="tableId">
                     <thead>
                         <tr>
-
                             <th>ID</th>
                             <th>Email</th>
                             <th>Name</th>
@@ -62,73 +62,8 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>anonymus@yahoo.com</td>
-                            <td>anonymus</td>
-                            <td>TheMostAnonymus</td>
-                            <td>100</td>
-                            <td>
-                                <button><i class="fa fa-pencil-square-o"></i></button>
-                                <button><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>anonymus@yahoo.com</td>
-                            <td>anonymus</td>
-                            <td>TheMostAnonymus</td>
-                            <td>100</td>
-                            <td>
-                                <button><i class="fa fa-pencil-square-o"></i></button>
-                                <button><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>anonymus@yahoo.com</td>
-                            <td>anonymus</td>
-                            <td>TheMostAnonymus</td>
-                            <td>100</td>
-                            <td>
-                                <button><i class="fa fa-pencil-square-o"></i></button>
-                                <button><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>anonymus@yahoo.com</td>
-                            <td>anonymus</td>
-                            <td>TheMostAnonymus</td>
-                            <td>100</td>
-                            <td>
-                                <button><i class="fa fa-pencil-square-o"></i></button>
-                                <button><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>anonymus@yahoo.com</td>
-                            <td>anonymus</td>
-                            <td>TheMostAnonymus</td>
-                            <td>100</td>
-                            <td>
-                                <button><i class="fa fa-pencil-square-o"></i></button>
-                                <button><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
-                         <tr>
-                            <td>1</td>
-                            <td>anonymus@yahoo.com</td>
-                            <td>anonymus</td>
-                            <td>TheMostAnonymus</td>
-                            <td>100</td>
-                            <td>
-                                <button><i class="fa fa-pencil-square-o"></i></button>
-                                <button><i class="fa fa-trash"></i></button>
-                            </td>
-                        </tr>
+                    <tbody id="tabodyId">                       
+                        
                     </tbody>
                 </table>
             </div>
