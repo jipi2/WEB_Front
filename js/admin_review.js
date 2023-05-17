@@ -52,6 +52,7 @@ function validateRow(id) {
     
   };
 
+  console.log(id);
   let url = "http://localhost:2222/api/review/validateReview/"+id;
   console.log(url);
 
@@ -68,6 +69,10 @@ function validateRow(id) {
 
 document.addEventListener("DOMContentLoaded", function()
 {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js';
+    document.head.appendChild(script);
+
     const tbody = document.getElementById("tbodyId");
 
     const jwt = getCookie('jwt');
@@ -122,6 +127,17 @@ document.addEventListener("DOMContentLoaded", function()
             });
         })
         .catch(error => {
-          alert("You are not admin!");
+          //alert("You are not admin!");
+           Swal.fire({
+                title: 'ERROR',
+                text: 'You are not admin',
+                icon: 'error',
+                customClass: {
+                    container: 'custom-swal-container',
+                    title: 'custom-swal-error-title',
+                    content: 'custom-swal-content',
+                    confirmButton: 'custom-swal-confirm-button',
+                }
+          });
         });
 });

@@ -32,8 +32,14 @@ function loadGrid(movieJSON, grid_id)
     const cardOverlay = document.createElement("div");
     cardOverlay.classList.add("card-overlay");
 
-    const bookmark = document.createElement("div");
-    bookmark.classList.add("bookmark");
+    const xsignDiv = document.createElement("div");
+    xsignDiv.classList.add("xsign");
+
+    const xsignIcon = document.createElement("i");
+    xsignIcon.classList.add("fa", "fa-times");
+    xsignIcon.setAttribute("aria-hidden", "true");
+
+    xsignDiv.appendChild(xsignIcon);
 
     const rating = document.createElement("div");
     rating.classList.add("rating");
@@ -48,7 +54,7 @@ function loadGrid(movieJSON, grid_id)
     rating.appendChild(ratingIcon);
     rating.appendChild(ratingSpan);
 
-    cardOverlay.appendChild(bookmark);
+    cardOverlay.appendChild(xsignDiv);
     cardOverlay.appendChild(rating);
 
     cardHead.appendChild(img);
@@ -82,6 +88,38 @@ function loadGrid(movieJSON, grid_id)
     cardBody.appendChild(cardInfo);
 
     container.appendChild(movieCard);
+
+    xsignIcon.addEventListener("click", function(e){
+      e.preventDefault();
+
+      const jwt = getCookie('jwt');
+
+      var myHeaders = new Headers();
+      myHeaders.append("Authorization", "Bearer "+jwt);
+    
+      const movieId = movie.id;
+      const url = "http://localhost:2222/api/user/removeMovieWatchList/movie/"+movieId;
+
+      fetch(url, {
+        method: "PUT",
+        headers: myHeaders,
+      })
+      .then(response => {
+        if (!response.ok) 
+        {
+           response.json().then(data =>{
+            const errorMess = data.message;
+            alert(errorMess);
+            return;
+           });
+        }
+        else
+        {
+          container.removeChild(movieCard);
+          //alert(cardTitle.textContent+"was deleted from watch list.");
+        }
+      });
+    });
 
     movieCard.addEventListener("click", function(e) {
       if(e.target == cardOverlay){

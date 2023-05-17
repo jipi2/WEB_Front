@@ -8,6 +8,10 @@ function getCookie(name) {
 
 document.addEventListener("DOMContentLoaded", function()
 {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js';
+    document.head.appendChild(script);
+
     const jwt = getCookie('jwt');
 
     const passForm = document.getElementById("updatePassForm");
@@ -25,7 +29,18 @@ document.addEventListener("DOMContentLoaded", function()
 
         if(pass.value !== conPass.value && pass.value != "" && conPass.value != "")
         {
-            alert("The passwords are not the same");
+            //alert("The passwords are not the same");
+            Swal.fire({
+                title: 'Confirm Password',
+                text: 'The passwords are not the same',
+                icon: 'error',
+                customClass: {
+                    container: 'custom-swal-container',
+                    title: 'custom-swal-error-title',
+                    content: 'custom-swal-content',
+                    confirmButton: 'custom-swal-confirm-button',
+                }
+            });
             return;
         } 
 
@@ -47,13 +62,36 @@ document.addEventListener("DOMContentLoaded", function()
         .then(response => {
             if (!response.ok) {
                 
-                alert("Old password was not oke");
+                //alert("Old password was not oke");
+
+                Swal.fire({
+                    title: 'Old Password Problems',
+                    text: 'Old password was not oke',
+                    icon: 'error',
+                    customClass: {
+                        container: 'custom-swal-container',
+                        title: 'custom-swal-error-title',
+                        content: 'custom-swal-content',
+                        confirmButton: 'custom-swal-confirm-button',
+                    }
+                });
+
                 pass.value="";
                 oldPass.value="";
                 conPass.value="";
                 throw new Error("Network response was not ok");
             }
-            alert("Password modified");
+            //alert("Password modified");
+
+            Swal.fire({
+                title: 'Password Modified!',
+                customClass: {
+                    container: 'custom-swal-container',
+                    title: 'custom-swal-title',
+                    content: 'custom-swal-content',
+                    confirmButton: 'custom-swal-confirm-button',
+                }
+            });
         })
 
     });
@@ -80,17 +118,39 @@ document.addEventListener("DOMContentLoaded", function()
             headers: myHeaders,
             body: emailUpdateJson
         })
-        .then(response => {
+        .then(response => 
+            {
             if (!response.ok) {
                response.json().then(data =>{
                 const errorMess = data.message;
-                alert(errorMess);
+                //alert(errorMess);
+
+                Swal.fire({
+                    title: 'Email Problems',
+                    text: errorMess,
+                    icon: 'error',
+                    customClass: {
+                        container: 'custom-swal-container',
+                        title: 'custom-swal-error-title',
+                        content: 'custom-swal-content',
+                        confirmButton: 'custom-swal-confirm-button',
+                    }
+                });
                });
                 oldEmail.value="";
                 newEmail.value="";
                 return;
             }
-            alert("Email modified");
+            //alert("Email modified");
+            Swal.fire({
+                title: 'Email Modified!',
+                customClass: {
+                    container: 'custom-swal-container',
+                    title: 'custom-swal-title',
+                    content: 'custom-swal-content',
+                    confirmButton: 'custom-swal-confirm-button',
+                }
+            });
         })
 
     });
@@ -102,7 +162,8 @@ document.addEventListener("DOMContentLoaded", function()
         const oldName = document.getElementById("oldName");
         const newName = document.getElementById("newName");
 
-        let nameUpdate = {
+        let nameUpdate = 
+        {
             oldName:oldName.value,
             newName:newName.value
         }
@@ -119,12 +180,34 @@ document.addEventListener("DOMContentLoaded", function()
         })
         .then(response => {
             if (!response.ok) {
-                alert("Old name was not oke");
+                //alert("Old name was not oke");
+                
+                Swal.fire({
+                    title: 'Name Problems',
+                    text: 'Old name was not ok!',
+                    icon: 'error',
+                    customClass: {
+                        container: 'custom-swal-container',
+                        title: 'custom-swal-error-title',
+                        content: 'custom-swal-content',
+                        confirmButton: 'custom-swal-confirm-button',
+                    }
+                });
+
                 oldName.value="";
                 newName.value="";
                 return;
             }
-            alert("Name modified");
+            //alert("Name modified");
+            Swal.fire({
+                title: 'Name Modified!',
+                customClass: {
+                    container: 'custom-swal-container',
+                    title: 'custom-swal-title',
+                    content: 'custom-swal-content',
+                    confirmButton: 'custom-swal-confirm-button',
+                }
+            });
         })
     });
 
@@ -155,7 +238,18 @@ document.addEventListener("DOMContentLoaded", function()
             {
                 response.json().then(data =>{
                     const errorMess = data.message;
-                    alert(errorMess);
+                   // alert(errorMess);
+                   Swal.fire({
+                    title: 'Name Problems',
+                    text: errorMess,
+                    icon: 'error',
+                    customClass: {
+                        container: 'custom-swal-container',
+                        title: 'custom-swal-error-title',
+                        content: 'custom-swal-content',
+                        confirmButton: 'custom-swal-confirm-button',
+                    }
+                });
                    });
 
                     oldEmail.value="";
@@ -163,7 +257,16 @@ document.addEventListener("DOMContentLoaded", function()
                     return;
             }
         
-        alert("Name modified");
+        //alert("Name modified");
+        Swal.fire({
+            title: 'Name Modified!',
+            customClass: {
+                container: 'custom-swal-container',
+                title: 'custom-swal-title',
+                content: 'custom-swal-content',
+                confirmButton: 'custom-swal-confirm-button',
+            }
+        });
         return response.json();
            
         })

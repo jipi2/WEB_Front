@@ -9,8 +9,9 @@ function getCookie(name) {
 function loadReviews(reviewJSON)
 {
   const testimonialData = JSON.parse(reviewJSON);
-  const sectionBody = document.getElementById("testimonials");
-  
+  //const sectionBody = document.getElementById("testimonials");
+  const divBody = document.getElementById("boxTestimonials");
+
   for (let i = 0; i < testimonialData.length; i++) 
   {
     const testimonial = testimonialData[i];
@@ -75,7 +76,7 @@ function loadReviews(reviewJSON)
     testimonialBox.appendChild(boxTop);
     testimonialBox.appendChild(viewerComment);
   
-    sectionBody.appendChild(testimonialBox);
+    divBody.appendChild(testimonialBox);
   }
   
 }
@@ -130,5 +131,34 @@ document.addEventListener("DOMContentLoaded", function()
 
       })
       .catch(error => console.log('error', error));
+
+      const searchForm = document.getElementById("search-from");
+      const searchInput = document.getElementById("searchInput");
+
+      searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const movieName = searchInput.value;
+
+        fetch("http://localhost:2222/api/movie/getMovieIdByName/"+movieName, requestOptions)
+        .then(response => response.text())  
+        .then(result =>{
+          
+          const id = parseInt(result, 10);
+
+          if(id === -1)
+            alert("We are sorry, but we could not find that movie.");
+          else
+          {
+            localStorage.setItem("movieId", id);
+            window.location.href = "review.html";
+
+          }
+
+          console.log(id);
+  
+        })
+
+
+      });
 
 });

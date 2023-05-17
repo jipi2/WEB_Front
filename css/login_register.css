@@ -1,3 +1,92 @@
+:root {
+
+    --background: hsla(220, 17%, 7%, 1);
+    --banner-background: hsla(250, 6%, 20%, 1);
+    --on-background: hsla(220, 100%, 95%, 1);
+    --primary: hsla(349, 100%, 43%, 1);
+    --primary-variant: hsla(349, 69%, 51%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+  
+    /* gradient colors */
+  
+    --ff-dm-sans: 'DM Sans', sans-serif;
+  
+    --fs-heading: 4rem;
+    --fs-title: 2rem;
+    --fs-body: 1.8rem;
+    --fs-button: 1.5rem;
+  
+    --weight-bold: 700;
+  
+    --radius-8: 8px;
+  
+  
+    --transition-short: 250ms ease;
+    --transition-long: 500ms ease;
+    
+  }
+    
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    li { list-style: none; }
+    
+    a,
+    img,
+    span,
+    iframe,
+    button { display: block; }
+    
+    a {
+      text-decoration: none;
+    }
+    
+    img { height: auto; }
+    
+    input,
+    button {
+      background: none;
+      border: none;
+      font: inherit;
+    }
+    
+    input { width: 100%; }
+    
+    button {
+      text-align: left;
+      cursor: pointer;
+    }
+    
+    html {
+      font-family: var(--ff-dm-sans);
+      font-size: 10px;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-size: var(--fs-body);
+      line-height: 1.5;
+    }
+    
+    :focus-visible { outline-color: var(--primary-variant); }
+    
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--banner-background);
+      border-radius: var(--radius-8);
+}
+
+
 *
 {
     margin: 0;

@@ -108,13 +108,34 @@ function loadGrid(movieJSON, grid_id)
         {
            response.json().then(data =>{
             const errorMess = data.message;
-            alert(errorMess);
+            Swal.fire({
+              title: 'Already Saved',
+              text: errorMess,
+              customClass: {
+                  container: 'custom-swal-container',
+                  title: 'custom-swal-title',
+                  content: 'custom-swal-content',
+                  confirmButton: 'custom-swal-confirm-button',
+              }
+          });
+
             return;
            });
         }
         else
         {
-          alert(cardTitle.textContent+" added to watch list");
+          //alert(cardTitle.textContent+" added to watch list");
+          const mesage  = cardTitle.textContent+" added to watch list.";
+          Swal.fire({
+            title: 'SAVED',
+            text: mesage,
+            customClass: {
+                container: 'custom-swal-container',
+                title: 'custom-swal-title',
+                content: 'custom-swal-content',
+                confirmButton: 'custom-swal-confirm-button',
+            }
+        });
         }
       });
     });
@@ -131,6 +152,10 @@ function loadGrid(movieJSON, grid_id)
 
 document.addEventListener("DOMContentLoaded", function()
 {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js';
+    document.head.appendChild(script);
+
     const jwt = getCookie('jwt');
 
     var myHeaders = new Headers();
@@ -146,13 +171,27 @@ document.addEventListener("DOMContentLoaded", function()
     
     fetch("http://localhost:2222/api/movie/getGenderMovies/Action", requestOptions)
       .then(response => response.text())
-
       .then(result =>{
-        
+      
+        if(result.match("500"))
+        {
+          Swal.fire({
+            title: 'ERROR',
+            text: 'You are not logged! You can not see any movie!',
+            icon: 'error',
+            customClass: {
+                container: 'custom-swal-container',
+                title: 'custom-swal-error-title',
+                content: 'custom-swal-content',
+                confirmButton: 'custom-swal-confirm-button',
+            }
+        });
+        return;
+        }
         loadGrid(result, "actionGrid");
 
-      })
-      .catch(error => console.log('error', error));
+      });
+
 
     fetch("http://localhost:2222/api/movie/getGenderMovies/Horror", requestOptions)
       .then(response => response.text())
@@ -162,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function()
         loadGrid(result, "horrorGrid");
 
       })
-      .catch(error => console.log('error', error));
+
 
     fetch("http://localhost:2222/api/movie/getGenderMovies/Comedy", requestOptions)
       .then(response => response.text())
@@ -172,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function()
         loadGrid(result, "comedyGrid");
 
       })
-      .catch(error => console.log('error', error));
+
 
       fetch("http://localhost:2222/api/movie/getGenderMovies/Drama", requestOptions)
       .then(response => response.text())
@@ -182,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function()
         loadGrid(result, "dramaGrid");
 
       })
-      .catch(error => console.log('error', error));
 
     fetch("http://localhost:2222/api/movie/getGenderMovies/SF", requestOptions)
       .then(response => response.text())
@@ -192,6 +230,47 @@ document.addEventListener("DOMContentLoaded", function()
         loadGrid(result, "sfGrid");
 
       })
-      .catch(error => console.log('error', error));
 
+
+      const searchForm = document.getElementById("search-from");
+      const searchInput = document.getElementById("searchInput");
+
+      searchForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const movieName = searchInput.value;
+
+          fetch("http://localhost:2222/api/movie/getMovieIdByName/"+movieName, requestOptions)
+          .then(response => response.text())  
+          .then(result =>{
+            
+            const id = parseInt(result, 10);
+
+            if(id === -1)
+            {
+                //alert("We are sorry, but we could not find that movie.");
+                Swal.fire({
+                  title: 'Not Found',
+                  text: 'We are sorry, but we could not find that movie.',
+                  icon: 'error',
+                  customClass: {
+                      container: 'custom-swal-container',
+                      title: 'custom-swal-error-title',
+                      content: 'custom-swal-content',
+                      confirmButton: 'custom-swal-confirm-button',
+                  }
+              });
+            }
+            else
+            {
+              localStorage.setItem("movieId", id);
+              window.location.href = "review.html";
+
+            }
+
+            console.log(id);
+    
+          })
+
+
+        });
 });

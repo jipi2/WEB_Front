@@ -9,6 +9,10 @@ function getCookie(name) {
 
 document.addEventListener("DOMContentLoaded", function()
 {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js';
+    document.head.appendChild(script);
+
     formReview = document.getElementById("reviewForm");
 
     formReview.addEventListener("submit", function(e)
@@ -58,14 +62,43 @@ document.addEventListener("DOMContentLoaded", function()
         .then(response => {
             if (!response.ok) {
                 
-                alert("You already wrote a review to this movie.");
-                window.location.href = "review.html";
+                //alert("You already wrote a review to this movie.");
+                Swal.fire({
+                    title: 'Reviewed',
+                    text: 'You already wrote a review to this movie.',
+                    icon: 'error',
+                    customClass: {
+                        container: 'custom-swal-container',
+                        title: 'custom-swal-error-title',
+                        content: 'custom-swal-content',
+                        confirmButton: 'custom-swal-confirm-button',
+                    }
+                });
+                setTimeout(() => {
+                    window.location.href = "review.html";
+                  }, 3000);
                
             }
-            else{
-            console.log(response.status);
-            alert("Review saved!");
-            window.location.href = "review.html";
+            else
+            {
+                console.log(response.status);
+
+                //alert("Review saved!");
+
+                Swal.fire({
+                    title: 'Review Saved!',
+                    text: 'Your opinion will appear after verification.',
+                    customClass: {
+                        container: 'custom-swal-container',
+                        title: 'custom-swal-title',
+                        content: 'custom-swal-content',
+                        confirmButton: 'custom-swal-confirm-button',
+                    }
+                });
+
+                setTimeout(() => {
+                    window.location.href = "review.html";
+                  }, 3000);
             }
         })
        

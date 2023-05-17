@@ -188,6 +188,7 @@ a {
 
 .movie-card:hover .card-overlay {opacity: 1;}
 
+.movie-card .xsign,
 .movie-card .rating
 {
   position: absolute;
@@ -198,6 +199,16 @@ a {
 }
 
 
+.movie-card .xsign
+{
+  left: 15px;
+  color:black;
+}
+
+.movie-card .xsign:hover
+{
+  color: red;
+}
 
 .movie-card .rating
 {
