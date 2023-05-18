@@ -236,7 +236,6 @@ document.addEventListener("DOMContentLoaded", function()
         Swal.fire({
             title: 'Enter your email:',
             input: 'text',
-            icon: 'info',
             showCancelButton: true,
             confirmButtonText: 'Submit',
             showLoaderOnConfirm: true,
@@ -245,6 +244,7 @@ document.addEventListener("DOMContentLoaded", function()
                 title: 'custom-swal-title',
                 content: 'custom-swal-content',
                 confirmButton: 'custom-swal-confirm-button',
+                cancelButton:'custom-swal-cancel-button'
             },
             preConfirm: (emailUser) => 
             {

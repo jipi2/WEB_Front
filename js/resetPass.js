@@ -53,10 +53,12 @@ document.addEventListener("DOMContentLoaded", function()
             if (!response.ok) {
                 
                 //alert("Old password was not oke");
-
+                response.json().then(data =>{
+                    const errorMess = data.message;
+                
                 Swal.fire({
-                    title: 'Old Password Problems',
-                    text: 'Old password was not oke',
+                    title: 'Password Problems',
+                    text: errorMess,
                     icon: 'error',
                     customClass: {
                         container: 'custom-swal-container',
@@ -67,9 +69,9 @@ document.addEventListener("DOMContentLoaded", function()
                 });
 
                 pass.value="";
-                oldPass.value="";
                 conPass.value="";
-                throw new Error("Network response was not ok");
+            });
+            return;
             }
             //alert("Password modified");
 

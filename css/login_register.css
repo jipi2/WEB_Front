@@ -318,3 +318,60 @@
         top: 150px;
     }
 }
+
+.custom-swal-container {
+    border-radius: 8px;
+    background-color: aliceblue;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    z-index: 9999999999;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .custom-swal-title {
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  .custom-swal-error-title {
+    font-size: 24px;
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .custom-swal-content {
+    font-size: 18px;
+    color: aliceblue;
+    margin-bottom: 20px;
+  }
+  
+  .custom-swal-confirm-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 2em;
+  }
+  
+  .custom-swal-cancel-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
